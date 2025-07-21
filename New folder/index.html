@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Required</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background-color: ghostwhite;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 150px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            padding: 10px 10px;
+            transition: 0.1s ease;
+        }
+
+        input:hover {
+            border-color: #4CAF50;
+            outline: none;
+            padding: 10px 25px;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+            transition: 0.1s ease;
+        }
+
+        input::placeholder {
+            color: #888;
+            font-style: italic;
+            font-size: bold;
+        }
+
+        h2 {
+            color: #dc0e0e;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: "Ballet", cursive;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        fieldset {
+            border: 2px solid #4CAF50;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: whitesmoke;
+        }
+
+        fieldset:hover {
+            border-color: #45a049;
+            box-shadow: 0px 5px 20px rgba(76, 175, 80, 0.5);
+            transition: 0.1s ease;
+            padding: 2%;
+            color: white;
+            border-radius: 10px;
+
+            animation: popIn 1s ease;
+
+
+            @keyframes popIn {
+                0% {
+                    transform: scale(0.8);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <h2>Login to Access Website</h2>
+    <fieldset>
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+
+        <p id="error" style="color: red;"><a href="./signup.html">forgot password</a> </p>
+    </fieldset>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Replace with your own secure logic in real applications!
+            if (username === "Ganesh" && password === "Ganesh@123") {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "home.html";
+            } else {
+                document.getElementById("error").textContent = "Invalid username or password";
+            }
+        }
+    </script>
+</body>
+
+</html>
